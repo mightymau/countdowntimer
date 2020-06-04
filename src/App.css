@@ -22,6 +22,7 @@ body {
     ;
 }
 .input-form {
+    z-index: 10;
     grid-area: input-form;
 }
 .input-box {
@@ -47,6 +48,9 @@ button {
     text-transform: uppercase;
     border: none;
 }
+button:focus {
+    outline:none;
+}
 .submit-button {
     
     background-color: #1F1F1F;
@@ -60,13 +64,84 @@ button {
 }
 .submit-button:hover {
     background-color:#545353;
-
 }
 .submit-button:active {
     background-color:#fff;
 }
 
 
+.pause-button {
+    color: #fff;
+    border-radius: 20px;
+    width: 130px;
+    padding-left: 30px;
+    background: url('/pause.png') no-repeat;
+    background-color: #7B0000;
+
+    background-position-x: 5px;
+    background-position-y: 4px;
+}
+.pause-button:hover {
+    background-color: rgb(155, 0, 0);
+}
+.pause-button:active {
+    background-color: #C90000;
+}
+.pause-button:disabled {
+    opacity: 20%;
+}
+
+.resume-button {
+    color: #fff;
+    border-radius: 20px;
+    width: 130px;
+    padding-left: 30px;
+    background: url('/resume.png') no-repeat;
+    background-color: #027B00;
+
+    background-position-x: 5px;
+    background-position-y: 4px;
+}
+.resume-button:hover {
+    background-color: #028F00;
+}
+.resume-button:active {
+    background-color: #03C000;
+}
+.resume-button:disabled {
+    opacity: 20%;
+}
+
+.speed-button {
+    background-color: #262626;
+    padding: 4px;
+    border-radius: 40px;
+    width: 45px;
+    height: 45px;
+    margin: 3px;
+    font-size:15px;
+    color: #fff;
+
+}
+.speed-button:hover {
+    background-color: #464646;
+}
+.selected {
+    border: 5px solid #00B1B8;
+}
+.speed-button:disabled {
+    opacity: 20%;
+}
+
+.warning {
+    color: #C90000;
+}
+.blink {
+    animation: blinker 0.8s linear infinite;
+}
+@keyframes blinker {  
+    50% { opacity: 0; }
+}
 .message {
     grid-area: message;
     color: #CA6E00;
@@ -79,6 +154,8 @@ button {
 .timer {
     grid-area: timer;
     height: 310px;
+    z-index: -10;
+
     
 }
 .label-minutes {
@@ -87,6 +164,7 @@ button {
     font-size: 20px;
     text-align: right;
     padding-right: 70px;
+    padding-bottom: 10px;
 
 }
 .label-seconds {
@@ -101,6 +179,8 @@ button {
 }
 .speed {
     grid-area: speed;
+    text-align: right;
+    padding-right: 50px;
 }
 h1 {
     font-size: 400px;
@@ -112,3 +192,5 @@ h1 {
 form {
     position: relative;
 }
+
+

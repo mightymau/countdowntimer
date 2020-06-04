@@ -82,6 +82,8 @@ class App extends React.Component {
         initialValue: minutesToSeconds,
         isRunning: true,
         togglePauseResumeDisabled: false,
+        speed: 1000
+
       });
 
     //Start the timer with initial speed 1000ms
@@ -130,13 +132,21 @@ class App extends React.Component {
 
   }
 
+  getTimerStyle = () => {
+    if(this.state.timer <= 20 && this.state.initialValue != null) {
+      if(this.state.timer <= 10 && this.state.initialValue != null )
+        return "warning blink"
+      return "warning"
+    }
+  }
+
   render () {
     return (
       <div className="App">
         <StartInput onSubmit={this.onSubmit} />
         <Message initialValue={this.state.initialValue} timer={this.state.timer} />
         <div className="timer">
-          <h1>{this.formatTime(this.state.minutes, this.state.seconds)}</h1>
+          <h1 className={this.getTimerStyle()}>{this.formatTime(this.state.minutes, this.state.seconds)}</h1>
         </div>
         <div className="label-minutes">
           minutes
@@ -145,7 +155,7 @@ class App extends React.Component {
           seconds
         </div>
         <ToggleControl disableButton={this.state.togglePauseResumeDisabled} isRunning={this.state.isRunning} togglePauseResume={this.onTogglePauseResume} />
-        <SpeedControl speedChange={this.speedChange}/>
+        <SpeedControl disableButton={!this.state.isRunning} selectedSpeed={this.state.speed} speedChange={this.speedChange}/>
       </div>
     );
   }

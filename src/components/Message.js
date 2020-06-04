@@ -10,7 +10,7 @@ function Message(props) {
                     return "Time's Up!"
                 } 
             }
-            return "More than halfway!"
+            return "More than halfway there!"
         }
         return 
     }
