@@ -57,7 +57,7 @@ class App extends React.Component {
       minutes = "0" + minutes
     if(seconds< 10)
       seconds = "0" + seconds
-    return minutes + ":" + seconds;
+    return (<span>{minutes}:{seconds}</span>);
   }
 
   onSubmit = (e) => {
@@ -147,12 +147,6 @@ class App extends React.Component {
         <Message initialValue={this.state.initialValue} timer={this.state.timer} />
         <div className="timer">
           <h1 className={this.getTimerStyle()}>{this.formatTime(this.state.minutes, this.state.seconds)}</h1>
-        </div>
-        <div className="label-minutes">
-          minutes
-        </div>
-        <div className="label-seconds">
-          seconds
         </div>
         <ToggleControl disableButton={this.state.togglePauseResumeDisabled} isRunning={this.state.isRunning} togglePauseResume={this.onTogglePauseResume} />
         <SpeedControl disableButton={!this.state.isRunning} selectedSpeed={this.state.speed} speedChange={this.speedChange}/>

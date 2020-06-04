@@ -16,14 +16,9 @@ body {
         "input-form input-form"
         "message message"
         "timer timer"
-        "label-minutes label-seconds"
         "pause speed"
 
     ;
-}
-.input-form {
-    z-index: 10;
-    grid-area: input-form;
 }
 .input-box {
     background-color: #1A1919;
@@ -137,10 +132,15 @@ button:focus {
     color: #C90000;
 }
 .blink {
-    animation: blinker 0.8s linear infinite;
+    animation: blinker 1s linear infinite;
 }
 @keyframes blinker {  
     50% { opacity: 0; }
+}
+
+.input-form {
+    z-index: 10;
+    grid-area: input-form;
 }
 .message {
     grid-area: message;
@@ -155,25 +155,11 @@ button:focus {
     grid-area: timer;
     height: 310px;
     z-index: -10;
+    margin-bottom: 20px;
 
     
 }
-.label-minutes {
-    grid-area: label-minutes;
-    color: #464646;
-    font-size: 20px;
-    text-align: right;
-    padding-right: 70px;
-    padding-bottom: 10px;
 
-}
-.label-seconds {
-    grid-area: label-seconds;
-    color: #464646;
-    font-size: 20px;
-    text-align: right;
-    padding-right: 70px;
-}
 .pause {
     grid-area: pause;
 }
@@ -192,5 +178,102 @@ h1 {
 form {
     position: relative;
 }
+
+
+/** Landscape **/
+@media only screen and (min-device-width: 375px) 
+                   and (max-device-width: 812px) 
+                   and (orientation: landscape ) {
+    .App {
+        width:600px;
+        grid-template-columns: 300px 300px;
+        align-content: stretch;
+    }
+    .timer {
+        height:200px;
+    }
+    h1 {
+        font-size: 250px;
+        margin-top: -60px;
+
+    }
+    .label-minutes {
+        padding-right: 20px;
+    }
+    .message {
+        height: 30px;
+        font-size: 25px;
+    }
+}
+
+/** Portrait **/
+@media only screen and (min-device-width: 360px) 
+                   and (max-device-width: 414px) 
+                   and (orientation: portrait ) {
+
+    .App {
+        width:360px;
+        grid-template-columns: 180px 180px;
+        align-content: stretch;
+    }
+    .input-form {
+        text-align: center;
+
+    }
+    h1 {
+        display: grid;
+        grid-template-rows: auto;
+        font-size: 300px;
+        width:360px;
+
+    }
+    span {
+        height:250px;
+        text-align: left;
+        display: block;
+
+
+    }
+    .timer {
+        height: 500px;
+        width:360px;
+    }
+    .message {
+        height: 30px;
+        font-size: 25px;
+        padding-bottom: 30px;
+        padding-top:10px
+
+    }
+    .speed {
+        grid-area: speed;
+        text-align: right;
+        padding-right: 0px;
+    }
+    
+}
+
+@media only screen and (max-device-height: 667px) 
+                   and (orientation: portrait ) {
+h1 {
+    font-size: 250px;
+}
+.timer {
+    height: 400px;
+}
+span {
+    height:200px;
+}
+.message {
+    height: 50px;
+    font-size: 25px;
+    padding-bottom: 30px;
+    padding-top:10px
+
+}
+
+
+                   }
+
 
 
