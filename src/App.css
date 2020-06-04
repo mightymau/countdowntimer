@@ -70,7 +70,7 @@ button:focus {
     border-radius: 20px;
     width: 130px;
     padding-left: 30px;
-    background: url('/pause.png') no-repeat;
+    background: url("/countdowntimer/pause.png") no-repeat;
     background-color: #7B0000;
 
     background-position-x: 5px;
@@ -83,7 +83,7 @@ button:focus {
     background-color: #C90000;
 }
 .pause-button:disabled {
-    opacity: 20%;
+    opacity: 0.2;
 }
 
 .resume-button {
@@ -91,7 +91,7 @@ button:focus {
     border-radius: 20px;
     width: 130px;
     padding-left: 30px;
-    background: url('/resume.png') no-repeat;
+    background: url("/countdowntimer/resume.png") no-repeat;
     background-color: #027B00;
 
     background-position-x: 5px;
@@ -104,7 +104,7 @@ button:focus {
     background-color: #03C000;
 }
 .resume-button:disabled {
-    opacity: 20%;
+    opacity: 0.2;
 }
 
 .speed-button {
@@ -125,7 +125,7 @@ button:focus {
     border: 5px solid #00B1B8;
 }
 .speed-button:disabled {
-    opacity: 20%;
+    opacity: 0.2;
 }
 
 .warning {
