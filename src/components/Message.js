@@ -15,7 +15,7 @@ function Message(props) {
         return 
     }
     return(
-        <div><h2 className="message">{displayMessage()}</h2></div>
+        <div className="message"><h2 className="message">{displayMessage()}</h2></div>
     )
 }
 

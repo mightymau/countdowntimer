@@ -7,25 +7,108 @@ body {
     font-family: 'Barlow Condensed', sans-serif;
 }
 .App {
-    width: 80vw;
+    width: 900px;
     margin: 0 auto;
+    display:grid;
+    grid-template-columns: 450px 450px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "input-form input-form"
+        "message message"
+        "timer timer"
+        "label-minutes label-seconds"
+        "pause speed"
+
+    ;
 }
-h1 {
-    font-size: 400px;
+.input-form {
+    grid-area: input-form;
+}
+.input-box {
+    background-color: #1A1919;
+    border: 1px solid #232323;
+    width:60px;
+    height:40px;
     color: #fff;
-    padding-bottom: 20px;
-    margin-top: -100px;
-    user-select: none;
-    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size:25px;
+    border-radius: 5px 0 0 5px;
+    padding-left: 10px;
+    margin-top: 10px;
 }
-form {
-    position: relative;
+.input-box:focus {
+    outline:none;
 }
-.message{
+
+button {
+    height: 42px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size:25px;
+    text-transform: uppercase;
+    border: none;
+}
+.submit-button {
+    
+    background-color: #1F1F1F;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0 5px 5px 0;
+
+}
+.submit-button:focus {
+    outline:none;
+}
+.submit-button:hover {
+    background-color:#545353;
+
+}
+.submit-button:active {
+    background-color:#fff;
+}
+
+
+.message {
+    grid-area: message;
     color: #CA6E00;
     text-transform: uppercase;
     height:40px;
     font-weight: 400;
     font-size: 35px;
     text-align: center;
+}
+.timer {
+    grid-area: timer;
+    height: 310px;
+    
+}
+.label-minutes {
+    grid-area: label-minutes;
+    color: #464646;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 70px;
+
+}
+.label-seconds {
+    grid-area: label-seconds;
+    color: #464646;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 70px;
+}
+.pause {
+    grid-area: pause;
+}
+.speed {
+    grid-area: speed;
+}
+h1 {
+    font-size: 400px;
+    color: #fff;
+    margin-top: -100px;
+    user-select: none;
+    text-align: center;
+}
+form {
+    position: relative;
 }

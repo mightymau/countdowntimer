@@ -47,10 +47,13 @@ function StartInput(props) {
 
     }
     return(
-        <form onSubmit={props.onSubmit}>
-            <input type="text" onChange={onChange} name="startTime" id="startTime" placeholder="(Minutes)"/>
-            <button>Start</button>
-        </form>    )
+        <div className="input-form">
+            <form onSubmit={props.onSubmit}>
+                <input className="input-box" type="text" onChange={onChange} name="startTime" id="startTime" placeholder="(Min)"/>
+                <button className="submit-button">Start</button>
+            </form>
+        </div>
+            )
 }
 
 export default StartInput

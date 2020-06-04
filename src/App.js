@@ -133,14 +133,18 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
-        <div>
-          <StartInput onSubmit={this.onSubmit} />
-        </div>
-        <div>
-          <Message initialValue={this.state.initialValue} timer={this.state.timer} />
+        <StartInput onSubmit={this.onSubmit} />
+        <Message initialValue={this.state.initialValue} timer={this.state.timer} />
+        <div className="timer">
           <h1>{this.formatTime(this.state.minutes, this.state.seconds)}</h1>
-          <ToggleControl disableButton={this.state.togglePauseResumeDisabled} isRunning={this.state.isRunning} togglePauseResume={this.onTogglePauseResume} />
         </div>
+        <div className="label-minutes">
+          minutes
+        </div>
+        <div className="label-seconds">
+          seconds
+        </div>
+        <ToggleControl disableButton={this.state.togglePauseResumeDisabled} isRunning={this.state.isRunning} togglePauseResume={this.onTogglePauseResume} />
         <SpeedControl speedChange={this.speedChange}/>
       </div>
     );
