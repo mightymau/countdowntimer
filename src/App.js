@@ -68,7 +68,7 @@ class App extends React.Component {
   onSubmit = (e) => {
     //Prevents the page from refreshing.
     e.preventDefault();
-    //Dont do anything is input is blank or zero
+    //Dont do anything if input is blank or zero
     if(e.target.startTime.value === "" || e.target.startTime.value === "0")
       return
 
@@ -128,17 +128,10 @@ class App extends React.Component {
     clearInterval(this.timerId);
 
     //Save new speed to state
-    this.setState({
-      speed: e.target.value
-    })
+    this.setState({speed: parseInt(e.target.value)});
 
-    //Check if the timer is running
-    if(this.state.isRunning) {
-      //If timer running when speed is changed, continue the timer
-      this.timerId = setInterval(
-        () => this.tick(), e.target.value
-      )
-    } 
+    //Resume the timer with the new speed interval
+    this.timerId = setInterval(() => this.tick(), e.target.value);
   }
 
   /**

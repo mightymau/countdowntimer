@@ -1,22 +1,20 @@
 import React from 'react';
 
-
+/**
+ * @description    Component for displaying the message based on the timer value. 
+ * @param {Object.Number} props.timer contains the current timer value
+ */
 function Message(props) {
-    //Method for displaying the message based on the props timer value
     const displayMessage = () => {
         if(props.timer <= Math.abs(props.initialValue / 2) && props.initialValue !== null) {
-            if(props.timer <= 10) {
-                if(props.timer === 0) {
-                    return "Time's Up!"
-                } 
-            }
+            if(props.timer === 0) {
+                return "Time's Up!"
+            } 
             return "More than halfway there!"
-        }
-        return 
+        } 
     }
     return(
         <div className="message"><h2 className="message">{displayMessage()}</h2></div>
     )
 }
-
 export default Message
