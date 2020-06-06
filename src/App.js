@@ -63,7 +63,7 @@ class App extends React.Component {
 
   /**
    * @description   Handles the event when input form is submitted.
-   * @param         {object} e Event object from the form that contains the initial timer value in minutes.
+   * @param         {Object} e Event object from the StartInput component that contains the initial timer value in minutes.
    */
   onSubmit = (e) => {
     //Prevents the page from refreshing.
@@ -136,7 +136,7 @@ class App extends React.Component {
 
   /**
    * @description   Method to check when timer is less than 20 and less than 10 
-   * @return        CSS class name for styling the timer when it is  or less 20 seconds or less and 10 seconds.    
+   * @return        CSS class name for styling the timer when it is 20 seconds and 10 seconds.    
    *             
    */
   getTimerStyle = () => {
