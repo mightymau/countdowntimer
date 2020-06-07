@@ -21,7 +21,7 @@ class App extends React.Component {
   }
   /**
    * @description   Handles the update for the timer in every interval.
-   *                The interval speed is handled by state.speed
+   *                The interval speed is stored in state.speed
    */
   tick = () => {
     //Check the timer if it has not reach 0 and if it is currently running
@@ -146,7 +146,6 @@ class App extends React.Component {
       return "warning"
     }
   }
-
   render () {
     return (
       <div className="App">

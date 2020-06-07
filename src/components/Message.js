@@ -6,11 +6,14 @@ import React from 'react';
  */
 function Message(props) {
     const displayMessage = () => {
+        const messageOnHalfway = "More than halfway there!";
+        const messageOnTimesUp = "Time's Up!";
+        
         if(props.timer <= Math.abs(props.initialValue / 2) && props.initialValue !== null) {
             if(props.timer === 0) {
-                return "Time's Up!"
+                return messageOnTimesUp
             } 
-            return "More than halfway there!"
+            return messageOnHalfway
         } 
     }
     return(
