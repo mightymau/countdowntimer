@@ -37,15 +37,8 @@ class App extends React.Component {
       if(this.state.timer === 0)
       this.setState({
         togglePauseResumeDisabled: true,
-      });
-    } else {
-      //if timer reaches 0, stop the timer
-      if(this.state.timer === 0) {
-        clearInterval(this.timerId);
-        this.setState({
-          isRunning: false,
-        });
-      }
+        isRunning: false,
+      }, clearInterval(this.timerId));
     }  
   }
 

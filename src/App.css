@@ -208,6 +208,12 @@ form {
         margin-bottom: -20px;
         
     }
+    .message {
+        font-size: 30px;
+    }
+    .timer {
+        width: 360px;
+    }
 }
 @media screen and (max-height: 414px) {
     h1{
@@ -216,4 +222,5 @@ form {
         margin-bottom: -20px;
         
     }
+    
 }
